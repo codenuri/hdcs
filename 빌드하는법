@@ -1,0 +1,57 @@
+D:// 에 1주일간 사용하실 작업 폴더 하나 만들어서 사용하시면 됩니다.
+
+C# 개발환경 구축하는 방법
+1. dotnet 도구 사용 - 무료(리눅스, 윈도우, 맥 모두 가능)
+=> 1. dotnet.microsoft.com/en-us/download 에서 .net SDK 설치 (무료, VS 설치시 자동설치)
+=> 2. 탐색기에서 원하는 위치에 "Sample" 이라는 폴더 만들어 보세요
+=> 3. 윈도우 시작 버튼 누르고   "cmd" 실행해보세요. 명령프롬프트
+=> 4. 명령프롬프트에서 "Sample" 폴더로 이동 ( cd 원하는 폴더명)
+=> 5. dotnet new console 하면 프로젝트파일과 기본 코드 생성 됩니다.
+=> 6. dotnet run 으로 실행. 
+     
+
+2. visual studio 사용 - 유료
+=> 1. visual studio 2022 community 등을 설치하고
+=> 2. 새프로젝트 만들기. 콘솔 앱 선택  => .net framework 말고, .net
+=> 3. 빌드는 "Ctrl + F5"
+
+//--------------------
+// 9 page
+entry point
+
+C/C++/Java 언어 : 약속된 함수(main) 부터 실행
+
+PYTHON/SWIFT : 소스의 1번째 문장 부터 차례대로 실행
+
+C#
+~ 8.0 까지 : 약속된 함수(main 부터 실행)
+9.0 ~       : Python 방식 제공
+		top level programming
+
+//----------------------
+System.Console.WriteLine("aaa");
+System.Console.WriteLine("hello");
+
+// 위 코드는 컴파일러가 아래 처럼 변경합니다.
+class Program
+{
+	public static void Main() 
+	{
+		System.Console.WriteLine("aaa");
+		System.Console.WriteLine("hello");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
