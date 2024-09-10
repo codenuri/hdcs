@@ -2,7 +2,7 @@ using static System.Console;
 
 int? n1 = null;
 
-// #1. ?? ¿¬»êÀÚ ¾Ë¾Æ µÎ¼¼¿ä(nullable3.cs Âü°í)
+// #1. ?? ì—°ì‚°ì ì•Œì•„ ë‘ì„¸ìš”(nullable3.cs ì°¸ê³ )
 int a = n1 ?? 3;
 
 
