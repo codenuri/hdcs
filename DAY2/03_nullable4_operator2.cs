@@ -21,7 +21,7 @@ s2 = s1?.ToUpper(); // s1 != null 이면  s2 = s1.ToUpper()
 
 // ?? 와 ? 정리
 // ?? : null 이면 디폴트값 사용하겠다
-// ?  : null 이면 메소드 호출 안하겠다.
+// ?  : null 이면 메소드 호출 안하겠다. 그리고 null 반환
 
 int? n = null;
 string s = null;
