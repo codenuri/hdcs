@@ -36,5 +36,17 @@ class Program
 
         p1.Name = "park";
         s = p1.Name;
+     
     }
+}
+
+// 결국 C# 의 타입(클래스)안에는
+class Car
+{
+    // 1. 필드(데이타), 대부분 private 
+    // 2. 메소드. "동작"을 나타내는 것. Go(), Stop()등 
+    //    => 사용할때 () 필요. c.Go()
+
+    // 3. 프라퍼티(속성), 데이타 접근시 사용, Speed
+    //    => () 없음.  c.Speed
 }
