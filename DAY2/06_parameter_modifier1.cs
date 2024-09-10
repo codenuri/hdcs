@@ -17,6 +17,10 @@ class Program
 		++x;	// 복사본 증가. 
 	}
 
+    // 핵심 : 인자를 받을때 ref 를 표기하면
+    // => 호출시 에도 "ref" 필요 합니다. Inc2(ref b)
+    // => 복사본을 만들지 말고, 참조(reference)로 받아 달라는 것
+    // => 의도 : main 에서 만든 변수를 수정하겠다는것
     public static void Inc2(ref int x)
     {
         ++x;   
@@ -32,5 +36,15 @@ class Program
         WriteLine($"{a}");  // 1
         WriteLine($"{b}");  // 2
 
+        // C#1.0 ~ : ref 는 함수 인자로만 사용가능했습니다.
+        // C#6.0 ~ : ref 를 지역변수에도 사용가능합니다.
+
+        int n1 = 10;
+        int n2 = n1; // 복사본 생성
+
+        ref int n3 = ref n1; // ok. 6.0 부터 가능.
+
+        n3 = 20; // n1 도 변경
+        WriteLine($"{n1}"); // 20
     }
 }
