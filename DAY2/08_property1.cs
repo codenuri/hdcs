@@ -39,7 +39,7 @@ class Program
 {
     public static void Main()
     {
-        Person1 p2 = new Person2();
+        Person2 p2 = new Person2();
 //      p2.age = -5; // error
         p2.SetAge(-5); // ok. 하지만, 잘못된 값이므로 실제 적용 되지는 않음.
 
@@ -49,5 +49,14 @@ class Program
         
 		p1.age = 10;
         p1.age = -5; // 실수로, 현실세계에 존재 할수 없는 객체를 만들었다!!
+
+        // C# 에서 객체를 만드는 방법
+
+//      타입 변수 = new 타입();      // 생성자가 없거나, 생성자 인자가 없을때
+//      타입 변수 = new 타입(인자);  // 생성자의 인자가 있을때
+
+//      c = Car();     // 파이썬
+//      Car c = new Car(); // C#
+//      Car c = new Car(1, 2); // 생성자의 인자가 2개일때
     }
 }
