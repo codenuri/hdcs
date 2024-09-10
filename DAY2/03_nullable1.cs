@@ -17,6 +17,9 @@ int n2 = null;	    // error.
 Nullable<int> n3 = null; // ok. 정확한 표기법
 int? n4 = null;          // ok. 편의 표기법(단축 표기법)
 
+
+// 원리 "int?" 타입은
+// => int 값 한개와 bool 값 한개 보관(값 있음/없음 표기)
  
   
 
