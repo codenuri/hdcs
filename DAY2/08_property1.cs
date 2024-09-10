@@ -21,6 +21,8 @@ class Person1
 
 
 
+
+
 class Person2
 {
     private int age; // private: 멤버가 아닌 외부에서 직접 접근할수 없다.
