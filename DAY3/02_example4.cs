@@ -9,6 +9,12 @@
 //     virtual 로 만들어야 한다.
 //     => 재정의 할때 "override" 붙여야 함
 
+// virtual method
+// => 파생 클래스가 "재정의 해도 된다는 것"
+//    필요할때 재정의해서 사용하라는 의미
+
+// => 재정의 하지 않으면 기반 클래스의 구현을 사용하게 됨. 
+
 class Shape
 {
     private int color = 0;
@@ -23,7 +29,6 @@ class Shape
     // => 파생 클래스가 override 해야 합니다.
     // => 따라서, virtual 
     public virtual int GetArea() { return 0; }
-
 
 
     public virtual void Draw() { WriteLine("draw Shape"); }
