@@ -11,28 +11,22 @@ class CameraBase
     virtual void Take() { WriteLine("CameraBase Take"); }
 }
 
-
-
-
-
-
-
-class Camera
-{
-    public void Take() { WriteLine("take picture"); }
-}
-
-class HDCamera
-{
-    public void Take() { WriteLine("take HD picture"); }
-}
-
-
+// 카메라 사용자는 "구체적인 제품명 대신에"
+// 규칙의 이름만 사용해야 합니다.
 class People
 {
+    public void UseCamera(CameraBase c) { c.Take(); }
+}
 
-    public void UseCamera(Camera c) { c.Take(); }
-    public void UseCamera(HDCamera c) { c.Take(); }
+
+class Camera : CameraBase
+{
+    public override void Take() { WriteLine("take picture"); }
+}
+
+class HDCamera : CameraBase
+{
+    public override void Take() { WriteLine("take HD picture"); }
 }
 
 class Program
@@ -40,7 +34,6 @@ class Program
     public static void Main()
     {
         People p = new People();
-
         Camera c = new Camera();
 
         p.UseCamera(c);
