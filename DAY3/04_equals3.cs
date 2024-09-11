@@ -1,6 +1,18 @@
 using static System.Console;
 
 // 107 page
+/*
+class Object
+{
+    public virtual bool Equals(Object   obj )
+    {
+
+    }
+}
+*/
+
+
+
 
 class Point
 {
@@ -40,3 +52,12 @@ class Program
 
     }
 }
+
+// equality 조사 방법
+// 1. p1 == p2
+// => 객체가 동일한지 조사.
+
+// 2. p1.Equals(p2) 
+// => Object 기본 구현은 "객체가 동일"한지 조사
+// => 파생 클래스 제작자가 변경 가능.
+// => 보통 "객체의 상태(값)이 동일한지 조사" 하도록 변경
