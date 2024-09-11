@@ -39,5 +39,7 @@ class Program
  
         Point p3 = p1.Clone();
 
+        IComparable c1;         // C# 1.0
+        IComparable<Point> c2;  // C# 2.0
     }
 }
