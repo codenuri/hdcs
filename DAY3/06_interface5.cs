@@ -20,7 +20,12 @@ class Program
         Point p1 = new Point(1, 2);
         Point p2 = p1;
 
-        Point p3 = p1.Clone(); // 만들어 봅시다.
-    
+//      Point p3 = p1.Clone();       // error
+        Point p3 = (Point)p1.Clone();// ok 인데, 불편합니다.
+
     }
 }
+
+// Animal a = Dog 객체
+// Dog d    = a;  // ?error
+// Dog d    = (Dog)a;  // ok
