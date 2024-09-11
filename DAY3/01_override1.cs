@@ -9,7 +9,9 @@ class Dog : Animal
 {
     // method override : 기반 클래스 메소드를 파생 클래스가
     //                   다시 구현하는 것
-    public void Cry1() { WriteLine("2. Dog Cry1");}
+    // new 가 없으면 경고 나옵니다.( 혹시 실수아닌가?? 하는 의미)
+    // 명확히 하기 위해서 "new" 를 표기 하는 것을 권장. 
+    public new void Cry1() { WriteLine("2. Dog Cry1");}
 }
 class Program
 {
