@@ -39,7 +39,7 @@ class Program
         Point p1 = new Point(1, 1);
         Point p2 = new Point(2, 2);
 
-        Point ret3 = Max(p1, p2); // error. IComparable을 구현한 타입이 아닙
+//      Point ret3 = Max(p1, p2); // error. IComparable을 구현한 타입이 아닙
     }
 }
 
