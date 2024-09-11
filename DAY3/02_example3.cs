@@ -39,7 +39,16 @@ class Program
                 // 만들어진 모든 도형을 그리기(Draw 호출)
                 foreach( var e in st )
                 {
-                    e.Draw();
+                    // st는 List<Shape> 이므로
+                    // 현재 e 는 Shape 타입.
+                    e.Draw(); // 이 부분이 에러. 
+                              // Shape 에는 Draw 가 없기 때문에 에러!!
+
+                   //((Rect)e).Draw(); // 이렇게 하면 에러가 아니지만  
+                                      // e가 가리키는 것은 Rect 가 아닌 Circle 일수도
+                                      // 있다.. 실행시 오류!!!
+                                      
+                    // 해결책이 중요!! -> 다음소스에서!!
                 }                    
             }
         }
