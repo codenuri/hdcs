@@ -1,11 +1,11 @@
 using System;
 using static System.Console;
 
-// 129 Âü°í
+// 129 ì°¸ê³ 
 
 class Program
 {
-    public static void Foo<T>(T a) where T : Animal   // reference type ¸¸ °¡´É
+    public static void Foo<T>(T a) where T : Animal   // reference type ë§Œ ê°€ëŠ¥
     {
         T p = new T();
     }
