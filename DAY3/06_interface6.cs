@@ -12,12 +12,14 @@ interface ICloneable
 
 // C#2.0 : Generic 문법이 도입됩니다.
 // => 모든 인터페이스의 Generic 버전이 추가됩니다.
+*/
+
 interface ICloneable<T>
 {
     T Clone();
 }
-*/
-class Point : ICloneable<Point>
+
+class Point : ICloneable, ICloneable<Point>
 {
     private int x = 0;
     private int y = 0;
@@ -27,6 +29,11 @@ class Point : ICloneable<Point>
     {
         Point pt = new Point(x, y);
         return pt;                 
+    }
+    public object Clone()
+    {
+        Point pt = new Point(x, y);
+        return pt;
     }
 }
 
