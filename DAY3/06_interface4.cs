@@ -1,4 +1,10 @@
-class Point
+using static System.Console;
+
+// 사용자가 만든 타입에 CompareTo 를 제공하려면
+// #1. IComparable 인터페이스를 구현하겠다고 표시 합니다.
+// #2. CompareTo 를 구현합니다.
+
+class Point : IComparable
 {
     private int x = 0;
     private int y = 0;
