@@ -36,3 +36,11 @@ class Program
     }
 }
 
+// Animal a = new Dog();
+// a.Cry()  <== 이 부분이 어떤 함수를 호출하는가 ?
+
+// java, swift, python : 무조건 Dog 의 Cry 호출
+
+// C++/C#              : Cry 를 어떻게 만들었냐에 따라 달라짐
+//                       virtual 이라면 : Dog Cry
+//                       virtual 아니면 : Animal Cry
