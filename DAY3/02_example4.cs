@@ -1,24 +1,29 @@
 ﻿using static System.Console;
 
-// 핵심 : 모든 파생 클래스의 공통의 특징은 기반 클래스에도 있어야 한다.
+// 핵심
+// #1. 모든 파생 클래스의 공통의 특징은 기반 클래스에도 있어야 한다.
 //       (디자인 원칙)
 //       모든 도형이 "Draw" 가 있다면, 기반 클래스인 Shape 에도 있어야 한다.
+
+// #2. 기반 클래스 메소드중에서 파생 클래스가 다시 만들게(override)하는 것은
+//     virtual 로 만들어야 한다.
+//     => 재정의 할때 "override" 붙여야 함
 
 class Shape
 {
     private int color = 0;
 
-    public void Draw() { WriteLine("draw Shape"); }
+    public virtual void Draw() { WriteLine("draw Shape"); }
 }
 
 class Rect : Shape
 {
-    public void Draw() { WriteLine("draw Rect"); }
+    public override void Draw() { WriteLine("draw Rect"); }
 }
 
 class Circle : Shape
 {
-    public void Draw() { WriteLine("draw Circle"); }
+    public override void Draw() { WriteLine("draw Circle"); }
 }
 
 class Program
