@@ -23,8 +23,10 @@ class Program
 
 		f += t.IMethod;
 		f += Program.SMethod;
+
+		f -= t.IMethod;
 			
 	
-		f(10); // 이순간 3개의 메소드가 차례대로(등록순으로) 호출됩니다.
+		f(10); // 이순간 3개의 메소드가 동시에 호출됩니다.
 	}
 }
