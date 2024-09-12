@@ -45,6 +45,8 @@ class MainWindow : Window
         Grid.SetRow(sp, 0);
         Grid.SetColumn(sp, 1);
 
+        grid.Children.Add(sp);
+
         sp.Children.Add(new Button { Content = "btn3" });
         sp.Children.Add(new Button { Content = "btn4" });
         sp.Children.Add(new Button { Content = "btn5" });
