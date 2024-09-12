@@ -39,6 +39,17 @@ class Date
                                                  // 복습할때 수정해 보세요
         return d;
     }
+
+    public bool IsLeapYear()
+    {
+        // 멤버 필드인 year 가 윤년이지 조사해서 반환
+        return false;
+    }
+    public static bool IsLeapYear(int y)
+    {
+        // 인자인 y 가 윤년인지 조사해서 반환
+        return false;
+    }
 }
 
 class Program
@@ -57,6 +68,7 @@ class Program
 
         // 윤년인지 알고 싶다. 
         // => 어떻게 제공할까요 ?
+        // => 이런 경우는 instance, static 모두 만드는 것인 정답!!!
         bool b1 = d1.IsLeapYear();
         bool b2 = Date.IsLeapYear(2026);
     }
