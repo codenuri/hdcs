@@ -24,7 +24,7 @@ class Program
 		string s = "abc";
 
         MyFunc f = Foo; // 함수 자체의 정보를 담는 타입이 필요
-		f(10); // foo(10)
+		f(10); // Foo(10)
 	}
 
 	public static void Foo(int arg)
