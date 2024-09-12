@@ -50,6 +50,8 @@ class MainWindow : Window
         sp.Children.Add(new Button { Content = "btn3" });
         sp.Children.Add(new Button { Content = "btn4" });
         sp.Children.Add(new Button { Content = "btn5" });
+
+        // btn1, btn2 클릭시 화면에 로깅해 보세요 ( event(delegate) 로하면됩니다.)
     }
 }
 
