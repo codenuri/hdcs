@@ -52,6 +52,19 @@ class MainWindow : Window
         sp.Children.Add(new Button { Content = "btn5" });
 
         // btn1, btn2 클릭시 화면에 로깅해 보세요 ( event(delegate) 로하면됩니다.)
+
+        btn1.Click += Btn1_Click;
+        btn2.Click += Btn2_Click;
+    }
+
+    private void Btn2_Click(object sender, RoutedEventArgs e)
+    {
+        Console.WriteLine("button1 click");
+    }
+
+    private void Btn1_Click(object sender, RoutedEventArgs e)
+    {
+        Console.WriteLine("button2 click");
     }
 }
 
