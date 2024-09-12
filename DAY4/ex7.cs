@@ -39,10 +39,14 @@ class App : Application
 {
     public void AppFoo() 
     { 
-        Console.WriteLine("AppFoo"); 
+        Console.WriteLine("AppFoo");
 
         // MainWindowFoo 호출!
         // 힌트 : ex3.cs 주석 참고
+
+        // App에서 주윈도우 참조가 필요하면 : this.MainWindow 인데, Window 타입이므로 
+        //                                  보통 캐스팅해서 사용
+        ((MainWindow)this.MainWindow).MainWindowFoo();
     }
 
     public App()
