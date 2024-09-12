@@ -1,11 +1,19 @@
 using static System.Console;
 
+
+delegate void HANDLER();  // 클래스(타입)을 만든것
+// class HANDLER { }
+
 class Button
 {
+    public HANDLER Click = null;
+
     public void UserPressButton()
     {
+        Click?.Invoke();    // 아래 코드와 동일. 
 
-        WriteLine("To Do Something");
+//      if (Click != null )
+//          Click();
     }
 }
 
@@ -19,7 +27,7 @@ class Program
         Button btn1 = new Button();
         Button btn2 = new Button();
 
-        btn1.Click = F1;    // 버튼을 눌렀을때 호출될 함수를 등록
+        btn1.Click = F1;    // 버튼을 눌렀을때 호출될 메소드를 등록
         btn2.Click = F2;
 
         btn1.UserPressButton(); 	
