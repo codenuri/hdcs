@@ -38,6 +38,16 @@ class MainWindow : Window
         grid.Children.Add(btn1);
         grid.Children.Add(btn2);
 
+
+        // 아래 코드 생각해 보세요
+        StackPanel sp = new StackPanel();
+
+        Grid.SetRow(sp, 0);
+        Grid.SetColumn(sp, 1);
+
+        sp.Children.Add(new Button { Content = "btn3" });
+        sp.Children.Add(new Button { Content = "btn4" });
+        sp.Children.Add(new Button { Content = "btn5" });
     }
 }
 
