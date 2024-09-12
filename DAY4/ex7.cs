@@ -13,6 +13,10 @@ using System.Windows;
 // => Application.Current
 // => 보통 캐스팅해서 사용 : ((App)Application.Current).메소드이름()
 
+// App 클래스에서 MainWindow 참조가 필요하면
+// => this.MainWindow 
+// => 타입이 Window 이므로 보통 캐스팅 해서 사용
+// => ((MainWindow)this.MainWindow)
 
 class MainWindow : Window
 {
