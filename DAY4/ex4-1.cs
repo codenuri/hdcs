@@ -15,7 +15,6 @@ class Program
 
         w.MouseLeftButtonDown += W_MouseLeftButtonDown;
 
-
         w.Show();
 
         app.Run();
