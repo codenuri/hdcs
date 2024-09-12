@@ -17,6 +17,7 @@ class Date
         get { return month; }
         set { if (value >= 1 && value <= 12) month = value; }
     }
+    // 복습할때 Year, Day 도 만들어 보세요
 }
 
 class Program
