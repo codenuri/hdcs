@@ -23,6 +23,8 @@ class Program
     private static void W_MouseLeftButtonDown(object sender, 
                         System.Windows.Input.MouseButtonEventArgs e)
     {
+        // sender : event 를 발생시킨 객체(Main 에서 만든 w 객체)
+        // e : 이벤트 추가 정보(마우스 좌표등)
         Window w = (Window)sender;
 
         Point pt = e.GetPosition(w);
