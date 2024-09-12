@@ -12,6 +12,8 @@ using System.Windows;
 
 // 이제 모든 WPF 프로그램은 아래 코드부터(복사해서) 작성
 
+// => 14page 코드
+
 class MainWindow : Window
 {
     public MainWindow()
