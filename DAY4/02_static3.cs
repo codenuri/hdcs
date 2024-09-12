@@ -36,3 +36,13 @@ class Program
         Console.WriteLine($"{Car.GetCount()}"); 
     }
 }
+
+// static field
+// => 객체와 상관없는 데이타
+// => 모든 객체가 공유 하고
+// => 객체가 없어도 메모리에 존재
+
+
+// static method
+// => 객체 없이 호출하는 메소드
+// => "클래스이름.메소드이름" 형태로 호출.
