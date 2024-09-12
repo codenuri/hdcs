@@ -27,7 +27,7 @@ class MainWindow : Window
         // #3. 그림연결
         // => Contents 에 연결되려면 UIElement 라는 클래스로 부터 파생된
         //    클래스만 가능
-        Uri uri = new Uri("D:\\totoro.jpg");
+        Uri uri = new Uri("D:\\totoro.jpeg");
 
         BitmapImage bitmap = new BitmapImage(uri);
 
