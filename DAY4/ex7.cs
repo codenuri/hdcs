@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows;
 
+// 인터넷에서 .jpg 혹은 .png 그림한개만 구해 놓으세요 (크기 상관없음.)
+
+
 // step 7. 객체간의 참조 얻기
 
 // 아래 WPF 프로그램은 크게 2개의 객체가 생성됩니다.
