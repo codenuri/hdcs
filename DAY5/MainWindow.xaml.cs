@@ -61,20 +61,29 @@ namespace SlidingPuzzle
             {
                 for (int x = 0; x < COUNT; x++)
                 {
-                    CroppedBitmap crop = new CroppedBitmap(bitmap,
-                                         new Int32Rect(x * (int)width,   y * (int)height, 
-                                                      (int)width,       (int)height));
+
+                    if (state[y, x] != EMPTY)
+                    {
+                        // 0~24 중 8번 블럭을 그리려면
+                        // => x로 3번째, y로 1번째 라는 것을 알아야 합니다. 
+                        int bx = state[y, x] % COUNT;  // 3
+                        int by = state[y, x] / COUNT;  // 1
+
+                        CroppedBitmap crop = new CroppedBitmap(bitmap,
+                                             new Int32Rect(bx * (int)width, by * (int)height,
+                                                          (int)width, (int)height));
 
 
-                    Image img = new Image { Source = crop };
+                        Image img = new Image { Source = crop };
 
-                    img.Stretch = Stretch.Fill;
-                    img.Margin = new Thickness(0.5);
+                        img.Stretch = Stretch.Fill;
+                        img.Margin = new Thickness(0.5);
 
-                    Grid.SetRow(img, y);
-                    Grid.SetColumn(img, x);
+                        Grid.SetRow(img, y);
+                        Grid.SetColumn(img, x);
 
-                    gameGrid.Children.Add(img);
+                        gameGrid.Children.Add(img);
+                    }
                 }
             }
 
