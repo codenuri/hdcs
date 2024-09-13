@@ -133,6 +133,7 @@ namespace SlidingPuzzle
                 return;
             }
             // 다 맞추었는지 확인
+            // => state 배열이 0 ~ 24로 순차적으로 되어 있으면.. ok.
         }
 
         public void SwapBlock(int x1, int y1, int x2, int y2)
@@ -143,6 +144,14 @@ namespace SlidingPuzzle
             state[y2, x2] = temp;
 
             // grid 내부의 image 교환
+            
+            // 아래 코드 의미
+            // => grid 안에서 특정 row, col 에 있는 개체를 얻어내는데
+            // => Image 타입으로 캐스팅해서 받는 코드
+            // => 인자는 람다 표현식
+
+            // 아래 부분에 대한 설명이 47 page
+            // DAY5 프로젝트의 04_find.cs 참고.
             Image img1 = gameGrid.Children.Cast<Image>().FirstOrDefault(n => Grid.GetRow(n) == y1 && Grid.GetColumn(n) == x1);
             Image img2 = gameGrid.Children.Cast<Image>().FirstOrDefault(n => Grid.GetRow(n) == y2 && Grid.GetColumn(n) == x2);
 
