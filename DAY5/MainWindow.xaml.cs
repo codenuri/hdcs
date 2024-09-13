@@ -20,6 +20,21 @@ namespace SlidingPuzzle
     {
         private const int COUNT = 5;
         private const int EMPTY = COUNT * COUNT - 1;
+        
+        private double width = 0;
+        private double height = 0;
+
+        private int[,] state = new int[COUNT, COUNT]; // 게임판 상태를나타내는
+                                                      // 2차원 배열
+        public void InitState()
+        {
+            int k = 0;    
+            for ( int y = 0; y < COUNT; ++y)
+            {
+                for (int x = 0; x < COUNT; ++x)
+                    state[y, x] = k++;      // 0 ~ 24 로 채우기
+            }
+        }
 
         public void InitGrid()
         {
@@ -30,8 +45,6 @@ namespace SlidingPuzzle
             }
         }
 
-        private double width = 0;
-        private double height = 0;
 
         public void DrawGrid()
         {
@@ -74,6 +87,7 @@ namespace SlidingPuzzle
         {
             InitializeComponent();
             InitGrid();
+            InitState();
             DrawGrid();
         }
     }
