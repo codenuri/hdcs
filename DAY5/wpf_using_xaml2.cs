@@ -11,17 +11,24 @@ using System.Windows.Markup;
 
 class MainWindow : Window
 {
-    public MainWindow()
+    // XAML 로 UI 를 만드는 함수
+    public void InitializeComponent()
     {
         // 현재 디렉토리 : 실행파일이 있는 폴더. 
         // 프로젝트 폴더에 있는 파일에 접근하기 위한 경로는 아래 처럼
-        FileStream fs = new FileStream("../../../MyXaml.xaml", FileMode.Open);
+        FileStream fs = new FileStream("../../../MyXaml2.xaml", FileMode.Open);
 
-        Button btn = (Button)XamlReader.Load(fs);
+        StackPanel sp = (StackPanel)XamlReader.Load(fs);
 
         fs.Dispose(); // 파일 즉시 닫기
 
-        btn.Content = "OK";
+        this.Content = sp;
+    }
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        //....
     }
 }
 
