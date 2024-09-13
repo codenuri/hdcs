@@ -25,8 +25,21 @@ class Program
 
         Console.WriteLine("Foo 계속실행");
 
-        int ret = t.Result; 
-        Console.WriteLine($"결과 : {ret}");
+//      int ret = t.Result;         // 이렇게 대기 하면
+                                    // 스레드 종료(연산의 종료)를
+                                    // 주스레드가 하게 됩니다.
+//      Console.WriteLine($"결과 : {ret}");
+
+        var waiter = t.GetAwaiter(); // 결과 대기 객체
+
+        waiter.OnCompleted(Goo ); // 작업이 종료 되면
+                                  // 또다른 스레드를 만들어서
+                                  // Goo 호출
+                                  // 작업의 대기를 주스레드가 하지 않음ㄴ.
+    }
+    public static void Goo()
+    {
+        Console.WriteLine("Goo");
     }
 
     public static void Main()
