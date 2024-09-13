@@ -30,9 +30,26 @@ namespace SlidingPuzzle
             }
         }
 
+        public void DrawGrid()
+        {
+            Uri uri = new Uri("D:\\totoro.jpeg"); // 어제 다운 받은 그림사용
+
+            BitmapImage bitmap = new BitmapImage(uri);
+
+            Image img = new Image { Source = bitmap };
+
+            Grid.SetRow(img, 0);
+            Grid.SetColumn(img, 0);
+
+            gameGrid.Children.Add(img);
+
+        }
+
+
         public MainWindow()
         {
             InitializeComponent();
+            InitGrid();
         }
     }
 }
