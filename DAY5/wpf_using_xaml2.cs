@@ -17,7 +17,9 @@ class MainWindow : Window
         // 프로젝트 폴더에 있는 파일에 접근하기 위한 경로는 아래 처럼
         FileStream fs = new FileStream("../../../MyXaml.xaml", FileMode.Open);
 
-        Button btn = (Button)XamlReader.Load(fs);   
+        Button btn = (Button)XamlReader.Load(fs);
+
+        fs.Dispose(); // 파일 즉시 닫기
 
         btn.Content = "OK";
     }
