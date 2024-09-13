@@ -42,14 +42,12 @@ namespace SlidingPuzzle
             Grid.SetColumn(img, 0);
 
             gameGrid.Children.Add(img);
-
         }
-
-
         public MainWindow()
         {
             InitializeComponent();
             InitGrid();
+            DrawGrid();
         }
     }
 }
