@@ -43,16 +43,26 @@ namespace SlidingPuzzle
             width  = bitmap.Width / COUNT;
             height = bitmap.Height / COUNT;
 
-            CroppedBitmap crop = new CroppedBitmap(bitmap,
-                                new Int32Rect(0, 0, (int)width, (int)height));
+
+            for (int y = 0; y < COUNT; y++)
+            {
+                for (int x = 0; x < COUNT; x++)
+                {
+                    CroppedBitmap crop = new CroppedBitmap(bitmap,
+                                         new Int32Rect(x * (int)width, y * (int)height, 
+                                                      (int)width, (int)height));
 
 
-            Image img = new Image { Source = crop };
+                    Image img = new Image { Source = crop };
 
-            Grid.SetRow(img, 0);
-            Grid.SetColumn(img, 0);
+                    Grid.SetRow(img, y);
+                    Grid.SetColumn(img, x);
 
-            gameGrid.Children.Add(img);
+                    gameGrid.Children.Add(img);
+                }
+            }
+
+
         }
 
 
