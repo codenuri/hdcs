@@ -18,8 +18,11 @@ class Program
         t2.Start("Hello");  // 인자가 한개 있는 경우. 
 
         // #2. 인자가 여러개라면 람다 표현식으로
-        Thread t3 = new Thread(() => F3(1, 2) );
+        Thread t3 = new Thread( () => F3(1, 2) ); // new Thread(Foo) 의미
         t3.Start();
-
+    }
+    public void static Foo()
+    {
+        F3(1, 2);
     }
 }
