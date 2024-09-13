@@ -25,7 +25,9 @@ class Program
 
         Console.WriteLine($"Foo #1 : {Thread.CurrentThread.ManagedThreadId}");
 
+
         int ret = await SumAsync(1, 1000);
+
 
         Console.WriteLine($"Foo #2 : {Thread.CurrentThread.ManagedThreadId}");
     }

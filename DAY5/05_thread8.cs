@@ -11,14 +11,15 @@ class Program
 
         FileStream fs = new FileStream("a.txt", FileMode.Create);
 
-        
-            byte[] buff = new byte[1024 * 1024 * 1000]; // 1G
+        byte[] buff = new byte[1024 * 1024 * 1000]; // 1G
                 
-            // fs.Write(buff, 0, buff.Length); // 동기
+        // fs.Write(buff, 0, buff.Length); // 동기
 
-            await fs.WriteAsync(buff);
+        await fs.WriteAsync(buff);
 
-            Console.WriteLine("WriteAsync Finish");
+        fs.Dispose();
+
+        Console.WriteLine("WriteAsync Finish");
 
     }
 

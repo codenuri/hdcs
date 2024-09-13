@@ -37,10 +37,7 @@ class Program
                                   // Goo 호출
                                   // 작업의 대기를 주스레드가 하지 않음ㄴ.
     }
-    public static void Goo()
-    {
-        Console.WriteLine("Goo");
-    }
+    public static void Goo()     {   Console.WriteLine("Goo");    }
 
     public static void Main()
     {
@@ -48,6 +45,8 @@ class Program
         // => 절대 "중단" 되면 안됩니다.
         Foo();
         Console.WriteLine("Main 계속실행");
+
+        Console.ReadLine();
         
     }
 
