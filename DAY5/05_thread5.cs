@@ -36,12 +36,12 @@ class Program
     }
     public static void Main()
     {
-        SumAsync(1, 2);
+        Task<int> t = SumAsync(1, 1000); // 연산이 종료되지 않아도 바로 리턴 됩니다.
 
         Console.WriteLine("Main 계속실행");
 
-//        int ret = t.Result; // 아직 연산이 안끝난경우는 대기.
-//        Console.WriteLine($"결과 : {ret}");
+        int ret = t.Result; // 아직 연산이 안끝난경우는 대기.
+        Console.WriteLine($"결과 : {ret}");
     }
 
 }
