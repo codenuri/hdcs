@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Media;
+using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Text;
 using System.Windows;
@@ -98,6 +99,63 @@ namespace SlidingPuzzle
             InitGrid();
             InitState();
             DrawGrid();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Point pt = e.GetPosition(gameGrid);
+
+            int bx = (int)(pt.X / (gameGrid.ActualWidth / COUNT));
+            int by = (int)(pt.Y / (gameGrid.ActualHeight / COUNT));
+
+
+            if (bx < 0 || by < 0 || bx >= COUNT || by >= COUNT) return;
+
+            if (bx < COUNT - 1 && state[by, bx + 1] == EMPTY) // RIGHT 가
+            {
+                SwapBlock(bx, by, bx + 1, by);
+            }
+            else if (bx > 0 && state[by, bx - 1] == EMPTY) // Left 가
+            {
+                SwapBlock(bx, by, bx - 1, by);
+            }
+            else if (by < COUNT - 1 && state[by + 1, bx] == EMPTY)
+            {
+                SwapBlock(bx, by, bx, by + 1);
+            }
+            else if (by > 0 && state[by - 1, bx] == EMPTY)
+            {
+                SwapBlock(bx, by, bx, by - 1);
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+            // 다 맞추었는지 확인
+        }
+
+        public void SwapBlock(int x1, int y1, int x2, int y2)
+        {
+            // 배열값 교환
+            int temp = state[y1, x1];
+            state[y1, x1] = state[y2, x2];
+            state[y2, x2] = temp;
+
+            // grid 내부의 image 교환
+            Image img1 = gameGrid.Children.Cast<Image>().FirstOrDefault(n => Grid.GetRow(n) == y1 && Grid.GetColumn(n) == x1);
+            Image img2 = gameGrid.Children.Cast<Image>().FirstOrDefault(n => Grid.GetRow(n) == y2 && Grid.GetColumn(n) == x2);
+
+            if (img1 != null)
+            {
+                Grid.SetRow(img1, y2);
+                Grid.SetColumn(img1, x2);
+            }
+            if (img2 != null)
+            {
+                Grid.SetRow(img2, y1);
+                Grid.SetColumn(img2, x1);
+            }
         }
     }
 }
