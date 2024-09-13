@@ -29,6 +29,7 @@ class Program
         // 주스레드는 계속 실행하다가
         // 결과 필요하면 아래 처럼 얻으면 됩니다.
         int ret = t.Result; // 아직 연산이 안끝난경우는 대기.
+        Console.WriteLine($"결과 : {ret}");
     }
 
 }
