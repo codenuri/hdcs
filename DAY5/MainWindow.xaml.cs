@@ -49,11 +49,14 @@ namespace SlidingPuzzle
                 for (int x = 0; x < COUNT; x++)
                 {
                     CroppedBitmap crop = new CroppedBitmap(bitmap,
-                                         new Int32Rect(x * (int)width, y * (int)height, 
-                                                      (int)width, (int)height));
+                                         new Int32Rect(x * (int)width,   y * (int)height, 
+                                                      (int)width,       (int)height));
 
 
                     Image img = new Image { Source = crop };
+
+                    img.Stretch = Stretch.Fill;
+                    img.Margin = new Thickness(0.5);
 
                     Grid.SetRow(img, y);
                     Grid.SetColumn(img, x);
